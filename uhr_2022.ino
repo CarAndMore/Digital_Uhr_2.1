@@ -80,7 +80,7 @@ void setFromNTC() {
   time(&now_NTC);
   localtime_r(&now_NTC, &tm);
   // Stelle RTC to NTC time.
-  rtc.adjust(DateTime(2014, 1, 21, tm.tm_hour, tm.tm_min, tm.tm_sec));
+  rtc.adjust(DateTime((tm.tm_year + 1900), (tm.tm_mon + 1), tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec));
 }
 
 void showTimeRTC () {
